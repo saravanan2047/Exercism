@@ -1,0 +1,28 @@
+class SqueakyClean 
+{
+     static String clean(String identifier) 
+    {
+       String s="";
+        for(int i=0;i<identifier.length();i++)
+            {
+                if(identifier.charAt(i)==' ') s+="_";
+                else if(identifier.charAt(i)=='-' && Character.isLetter(identifier.charAt(i+1)))  
+                    {   i++;
+                        s+=(identifier.substring(i,i+1)).toUpperCase();
+                    }
+                    else if(identifier.charAt(i)=='3')
+                        s+="e";
+                else if(identifier.charAt(i)=='4')
+                    s+='a';
+                else if(identifier.charAt(i)=='0')
+                    s+='o';
+                else if(identifier.charAt(i)=='1')
+                    s+='l';
+                else if(identifier.charAt(i)=='7')
+                    s+='t';
+                else if(Character.isLetter(identifier.charAt(i)))  s+=identifier.charAt(i);
+            }
+        return s;
+    }
+   
+}
